@@ -6,9 +6,13 @@
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
   let result = [];
-  for (let i of array) {
-    if (i.name.toLowerCase().includes(letter.toLowerCase()) ) {
-      result.push(i.name);
+  for (let account in array) {
+    let personName = array[account].name;
+    for (let i = 0; i < personName.length; i++) {
+      let charOfName = personName[i].toLowerCase();
+      if (charOfName === letter) {
+        result.push(personName);
+      }
     }
   }
   return result;
@@ -18,4 +22,3 @@ export function getClientsWithLetterInName(array, letter) {
 // Once you're finished run the test with "npm run test-10"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
-

@@ -1,4 +1,3 @@
-
 // EXERCISE 12
 // Return an array of all deposits greater than 100
 // Array example: bankAccounts in /data/data.js
@@ -6,10 +5,19 @@
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-
+  let result = [];
+  for (let account in array) {
+    let depositData = array[account].deposits;
+    if (depositData) {
+      for (let i = 0; i < depositData.length; i++) {
+        if (depositData[i] > 100) {
+          result.push(depositData[i]);
+        }
+      }
+    }
+  }
+  return result;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

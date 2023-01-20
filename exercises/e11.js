@@ -5,7 +5,20 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
+  let result = [];
+  for (let account in array) {
+    let withDrawalData = array[account].withdrawals;
+    if (withDrawalData) {
+      let total = 0;
+      for (let i = 0; i < withDrawalData.length; i++) {
+        total += parseFloat(withDrawalData[i]);
+      }
+      result.push(total);
+    } else {
+      result.push(0);
+    }
+  }
+  return result;
 }
 
 // === TEST YOURSELF ===
