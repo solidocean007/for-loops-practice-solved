@@ -6,7 +6,19 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-
+  let resultWithA = [];
+  let withoutA = [];
+  for(let name of array){
+    for(let char of name){
+      if(char === 'a'){
+        resultWithA.push(name)
+      }
+    } withoutA.push(name)
+  } 
+  console.log('with A: ' + resultWithA)
+  console.log('without A: ' + withoutA)
+  
+  return [resultWithA,withoutA]
 }
 
 
