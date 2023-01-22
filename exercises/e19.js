@@ -7,11 +7,10 @@ export function reverseArray(array) {
   // Your code goes here...
   console.log('type of array is: ' + typeof array)
   console.log('its length is: ' + array.length)
-
+  
   let result = [];
-  const numOfElements = array.length
-  for(let i = 0; i < numOfElements; i++){
-    result.push(array.pop())
+  for(let i = array.length; i > 0; i--){
+    result.push(array[i-1])
   }
 
   console.log('Result is: ' + result)
